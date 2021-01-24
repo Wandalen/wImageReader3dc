@@ -8,7 +8,7 @@ ___
 git clone https://github.com/Wandalen/wImageReader3dc
 cd wImageReader3dc
 npm install
-node sample/Sample.s
+node sample/trivial/Sample.s
 ```
 
 ## To add to your project
