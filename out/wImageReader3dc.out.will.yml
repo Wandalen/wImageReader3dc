@@ -1470,6 +1470,4 @@ module:
       ../.im.will.yml:
         hash: 0c0c686e146cb3be13df8a1693af6cd3
         size: 4740
-      wImageReader3dc.out.will.yml:
-        hash: 457de4c918bf77879d2742a548b7de88
-        size: 37445
+      wImageReader3dc.out.will.yml: *ref_0
