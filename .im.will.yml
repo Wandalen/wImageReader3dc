@@ -64,7 +64,7 @@ path:
       content: prime
   npm.proto.entry:
     - proto/node_modules/Tools
-    - ../wImageWriterPsd/proto/node_modules/wimagewriterpsd
+    - proto/node_modules/wimagereader3dc
 reflector:
   reflect.proto:
     inherit: predefined.*
