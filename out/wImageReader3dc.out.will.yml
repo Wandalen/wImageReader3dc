@@ -2,15 +2,12 @@ format: outwillfile-2.0
 root:
   - wImageReader3dc.out
 consistency:
-  wImageReader3dc.out.will.yml: &ref_0
-    hash: c61dd8af285ba503f2a0282e36b13ddf
-    size: 37419
-  ../.ex.will.yml: &ref_1
+  ../.ex.will.yml: &ref_0
     hash: 3907f1aaf2bd32d81c04fdaa57573f19
     size: 1703
-  ../.im.will.yml: &ref_2
-    hash: 5ea6de53c453c2c2c974d006703fd404
-    size: 4707
+  ../.im.will.yml: &ref_1
+    hash: c8d137f03328dcf275dd7191243339b7
+    size: 4688
 module:
   wImageReader3dc.out:
     about:
@@ -19,19 +16,19 @@ module:
       description: ___
       enabled: 1
       version: 0.4.0
-      interpreters:
+      interpreters: &ref_2
         - njs >= 10.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords:
+      keywords: &ref_3
         - tools
         - wTools
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
+      contributors: &ref_4
         - Kostiantyn Wandalen <wanalen@01.school>
       npm.name: wimagereader3dc
-      npm.scripts:
+      npm.scripts: &ref_5
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -142,7 +139,7 @@ module:
       npm.proto.entry:
         path:
           - ../proto/node_modules/Tools
-          - ../../wImageWriterPsd/proto/node_modules/wimagewriterpsd
+          - ../proto/node_modules/wimagereader3dc
       exported.dir.proto.export:
         criterion:
           generated: 1
@@ -682,24 +679,6 @@ module:
           content: prime
         inherit:
           - files.transpile
-      exported.proto.export:
-        opts:
-          filePath: 'reflector::exported.proto.export'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
-      exported.files.proto.export:
-        opts:
-          filePath: 'reflector::exported.files.proto.export'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
     build:
       proto.export:
         steps:
@@ -788,9 +767,8 @@ module:
           content: proto
           export: 1
     consistency:
-      wImageReader3dc.out.will.yml: *ref_0
-      ../.ex.will.yml: *ref_1
-      ../.im.will.yml: *ref_2
+      ../.ex.will.yml: *ref_0
+      ../.im.will.yml: *ref_1
   ../:
     about:
       name: wImageReader3dc
@@ -798,21 +776,13 @@ module:
       description: ___
       enabled: 1
       version: 0.4.0
-      interpreters:
-        - njs >= 10.0.0
-        - chrome >= 60.0.0
-        - firefox >= 60.0.0
-      keywords:
-        - tools
-        - wTools
+      interpreters: *ref_2
+      keywords: *ref_3
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
-        - Kostiantyn Wandalen <wanalen@01.school>
+      contributors: *ref_4
       npm.name: wimagereader3dc
-      npm.scripts:
-        test: wtest .run proto/**
-        docgen: wdocgen .build proto
+      npm.scripts: *ref_5
     path:
       module.willfiles:
         criterion:
@@ -921,7 +891,7 @@ module:
       npm.proto.entry:
         path:
           - proto/node_modules/Tools
-          - ../wImageWriterPsd/proto/node_modules/wimagewriterpsd
+          - proto/node_modules/wimagereader3dc
     submodule:
       wTools:
         path: 'npm:///wTools'
@@ -1468,6 +1438,5 @@ module:
         hash: 3907f1aaf2bd32d81c04fdaa57573f19
         size: 1703
       ../.im.will.yml:
-        hash: 5ea6de53c453c2c2c974d006703fd404
-        size: 4707
-      wImageReader3dc.out.will.yml: *ref_0
+        hash: c8d137f03328dcf275dd7191243339b7
+        size: 4688
